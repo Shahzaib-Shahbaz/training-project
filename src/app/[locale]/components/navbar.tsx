@@ -2,8 +2,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { useTranslation } from "react-i18next";
+
 export default function Navbar() {
   const pathname = usePathname();
+  const { t } = useTranslation("Index");
   return (
     <>
       <nav className="text-center bg-gray-300 sticky p-4 top-0 z-50 flex justify-around">
@@ -16,7 +19,7 @@ export default function Navbar() {
                 : "text-white "
             }
           >
-            Home
+            {t("Home")}
           </Link>
           <Link
             href={"/en/products" || "/id/products"}
@@ -26,7 +29,7 @@ export default function Navbar() {
                 : "text-white"
             }
           >
-            Products
+            {t("Products")}
           </Link>
         </div>
 
@@ -37,7 +40,7 @@ export default function Navbar() {
               pathname === "/en/signin" ? "text-blue-500" : "text-white"
             }
           >
-            Sign in
+            {t("Sign in")}
           </Link>
           <Link
             href={"/en/signup" || "/id/signup"}
@@ -45,7 +48,7 @@ export default function Navbar() {
               pathname === "/en/signup" ? "text-blue-500" : "text-white"
             }
           >
-            Sign up
+            {t("Sign up")}
           </Link>
         </div>
       </nav>

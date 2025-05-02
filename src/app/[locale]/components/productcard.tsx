@@ -69,7 +69,7 @@ export default function Productcard({
                 <ModalForm buttonText={"Edit"} product={product} />
               </span>
               <button>
-                <a href={`/products/${product.id}`}> view</a>
+                <a href={`/en/products/${product.id}`}> view</a>
               </button>
             </div>
           ) : (
